@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<head>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,3 +16,30 @@
     
 </body>
 </html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kazino & Bastore Online</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1> Kazino & Bastore Virtuale</h1>
+    <nav>
+      <a href="#baste">Baste Sportive</a>
+      <a href="#slot">Slot Machine</a>
+      <a href="#info">Rreth Nesh</a>
+    </nav>
+  </header>
+    <main>
+        <section class="bet-section">
+            <h2>Baste Sportive</h2>
+            <div class="match">
+                <p><strong>Barcelona</strong> vs <strong>Real Madrid</strong></p>
+                <label>Vendos bastin (në €): <input type="number" id="betAmount" min="1"></label>
+                <button onclick="placeBet()">Vendos Bastin</button>
+                <p id="betResult"></p>
+            </div>
+        </section>
+
