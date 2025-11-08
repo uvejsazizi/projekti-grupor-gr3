@@ -1,0 +1,91 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #0b132b;
+  color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+header {
+  background: #1c2541;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+h1 {
+  margin: 0;
+  color: #ffcc00;
+}
+
+main {
+  margin: 40px auto;
+  width: 90%;
+  max-width: 600px;
+  background: #3a506b;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+.match-card {
+  margin-bottom: 30px;
+}
+
+.odds {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+.bet-btn {
+  background: #5bc0be;
+  color: #0b132b;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.bet-btn:hover {
+  background: #3aafa9;
+}
+
+.bet-slip {
+  background: #1c2541;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+input {
+  padding: 10px;
+  width: 80%;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: none;
+}
+
+#placeBet {
+  background: #ffcc00;
+  color: #0b132b;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#placeBet:hover {
+  background: #ffd633;
+}
+
+footer {
+  background: #1c2541;
+  padding: 10px;
+  font-size: 0.9em;
+  color: #aaa;
+  margin-top: 30px;
+}
