@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bastore Sportive Online</title>
   <link rel="stylesheet" href="style.css">
-  <header>
+</head>
+
+<body>
+
+<header>
   <h1>Bastore Sportive</h1>
   <nav>
     <a href="index.html">Kryefaqja</a>
@@ -14,110 +18,89 @@
   </nav>
 </header>
 
-</head>
-<body>
-  <header>
-    <h1>Bastore Sportive</h1>
-    <p>Vend bastin tënd dhe fito!</p>
-  </header>
+<main>
 
-  <main>
-    <section class="match-card">
-      <h2>⚽ Ndeshja e Ditës</h2>
-      <p><strong>Real Madrid</strong> vs <strong>Barcelona</strong></p>
-      <div class="odds">
-        <button class="bet-btn" data-odd="2.10">1 (2.10)</button>
-        <button class="bet-btn" data-odd="3.40">X (3.40)</button>
-        <button class="bet-btn" data-odd="2.80">2 (2.80)</button>
-      </div>
-    </section>
+  
+  <section class="match-card">
+    <h2>Real Madrid vs Barcelona</h2>
+    <div class="odds">
+      <button class="bet-btn" data-odd="2.10">1 (2.10)</button>
+      <button class="bet-btn" data-odd="3.40">X (3.40)</button>
+      <button class="bet-btn" data-odd="2.80">2 (2.80)</button>
+    </div>
+  </section>
 
+  
+  <section class="match-card">
+    <h2>Dortmund vs Bayern</h2>
+    <div class="odds">
+      <button class="bet-btn" data-odd="2.50">1 (2.50)</button>
+      <button class="bet-btn" data-odd="3.40">X (3.40)</button>
+      <button class="bet-btn" data-odd="2.60">2 (2.60)</button>
+    </div>
+  </section>
 
-    <section class="bet-slip">
-      <h2>Fleta e Bastit</h2>
-      <p>Koeficienti total: <span id="totalOdd">0.00</span></p>
-      <label>Shuma e bastit (€):</label>
-      <input type="number" id="stake" placeholder="Shkruaj shumën" min="1">
-      <p>Fitimi i mundshëm: <span id="possibleWin">0.00</span> €</p>
-      <button id="placeBet">Vendos Bastin</button>
-      <p id="message"></p>
-    </section>
-  </main>
+ 
+  <section class="match-card">
+    <h2>Napoli vs Inter</h2>
+    <div class="odds">
+      <button class="bet-btn" data-odd="3.10">1 (3.10)</button>
+      <button class="bet-btn" data-odd="3.00">X (3.00)</button>
+      <button class="bet-btn" data-odd="2.40">2 (2.40)</button>
+    </div>
+  </section>
 
-    <main>
-    <section class="match-card">
-      <h2>⚽ Ndeshja e Ditës</h2>
-      <p><strong>dortmund</strong> vs <strong>bayern</strong></p>
-      <div class="odds">
-        <button class="bet-btn" data-odd="2.5">1 (2.10)</button>
-        <button class="bet-btn" data-odd="3.40">X (3.40)</button>
-        <button class="bet-btn" data-odd="2.6">2 (2.80)</button>
-      </div>
-    </section>
+  
+  <section class="match-card">
+    <h2>Liverpool vs Man United</h2>
+    <div class="odds">
+      <button class="bet-btn" data-odd="1.60">1 (1.60)</button>
+      <button class="bet-btn" data-odd="3.40">X (3.40)</button>
+      <button class="bet-btn" data-odd="4.10">2 (4.10)</button>
+    </div>
+  </section>
 
+     <section class="match-card">
+    <h2>kosova vs slovenia</h2>
+    <div class="odds">
+      <button class="bet-btn" data-odd="2.10">1 (3.5)</button>
+      <button class="bet-btn" data-odd="3.40">X (3.2)</button>
+      <button class="bet-btn" data-odd="2.80">2 (2.35)</button>
+    </div>
+  </section>
 
-    <section class="bet-slip">
-      <h2>Fleta e Bastit</h2>
-      <p>Koeficienti total: <span id="totalOdd">0.00</span></p>
-      <label>Shuma e bastit (€):</label>
-      <input type="number" id="stake" placeholder="Shkruaj shumën" min="1">
-      <p>Fitimi i mundshëm: <span id="possibleWin">0.00</span> €</p>
-      <button id="placeBet">Vendos Bastin</button>
-      <p id="message"></p>
-    </section>
-  </main>
-
-    <main>
-    <section class="match-card">
-      <h2>⚽ Ndeshja e Ditës</h2>
-      <p><strong>napoli</strong> vs <strong>inter milan</strong></p>
-      <div class="odds">
-        <button class="bet-btn" data-odd="3.4">1 (2.10)</button>
-        <button class="bet-btn" data-odd="3.40">X (3.40)</button>
-        <button class="bet-btn" data-odd="1.9">2 (2.80)</button>
-      </div>
-    </section>
+   <section class="match-card">
+    <h2>albania vs england</h2>
+    <div class="odds">
+      <button class="bet-btn" data-odd="2.10">1 (7.75)</button>
+      <button class="bet-btn" data-odd="3.40">X (4.5)</button>
+      <button class="bet-btn" data-odd="2.80">2 (1.42)</button>
+    </div>
+  </section>
 
 
-    <section class="bet-slip">
-      <h2>Fleta e Bastit</h2>
-      <p>Koeficienti total: <span id="totalOdd">0.00</span></p>
-      <label>Shuma e bastit (€):</label>
-      <input type="number" id="stake" placeholder="Shkruaj shumën" min="1">
-      <p>Fitimi i mundshëm: <span id="possibleWin">0.00</span> €</p>
-      <button id="placeBet">Vendos Bastin</button>
-      <p id="message"></p>
-    </section>
-  </main>
+ 
+  <section class="bet-slip">
+    <h2>Fleta e Bastit</h2>
+    <p>Koeficienti total: <span id="totalOdd">0.00</span></p>
 
-    <main>
-    <section class="match-card">
-      <h2>⚽ Ndeshja e Ditës</h2>
-      <p><strong>liverpol</strong> vs <strong>man united</strong></p>
-      <div class="odds">
-        <button class="bet-btn" data-odd="1.6">1 (2.10)</button>
-        <button class="bet-btn" data-odd="3.40">X (3.40)</button>
-        <button class="bet-btn" data-odd="4.1">2 (2.80)</button>
-      </div>
-    </section>
+    <label>Shuma e bastit (€):</label>
+    <input type="number" id="stake" placeholder="Shkruaj shumën" min="1">
+
+    <p>Fitimi i mundshëm: <span id="possibleWin">0.00</span> €</p>
+
+    <button id="placeBet">Vendos Bastin</button>
+    <p id="message"></p>
+  </section>
 
 
-    <section class="bet-slip">
-      <h2>Fleta e Bastit</h2>
-      <p>Koeficienti total: <span id="totalOdd">0.00</span></p>
-      <label>Shuma e bastit (€):</label>
-      <input type="number" id="stake" placeholder="Shkruaj shumën" min="1">
-      <p>Fitimi i mundshëm: <span id="possibleWin">0.00</span> €</p>
-      <button id="placeBet">Vendos Bastin</button>
-      <p id="message"></p>
-    </section>
-  </main>
+</main>
 
+<footer>
+  <p>© 2025 Bastore Sportive - Të gjitha të drejtat e rezervuara.</p>
+</footer>
 
-  <footer>
-    <p>© 2025 Bastore Sportive - Të gjitha të drejtat e rezervuara.</p>
-  </footer>
+<script src="main.js"></script>
 
-  <script src="main.js"></script>
 </body>
 </html>

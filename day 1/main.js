@@ -1,4 +1,4 @@
-let selectedOdds = {}; 
+let selectedOdds = {}; // Ruaj koeficientet e zgjedhura për çdo ndeshje
 
 const buttons = document.querySelectorAll('.bet-btn');
 const totalOddDisplay = document.getElementById('totalOdd');
@@ -6,47 +6,50 @@ const stakeInput = document.getElementById('stake');
 const possibleWinDisplay = document.getElementById('possibleWin');
 const message = document.getElementById('message');
 
-
+// Kur klikon një buton basti
 buttons.forEach(btn => {
   btn.addEventListener('click', () => {
-    const match = btn.closest('.match-card').querySelector('h2').textContent;
+    const matchCard = btn.closest('.match-card');
+    const matchTitle = matchCard.querySelector('h2').textContent.trim();
 
-   
-    document.querySelectorAll('.match-card').forEach(card => {
-      if (card.querySelector('h2').textContent === match) {
-        card.querySelectorAll('.bet-btn').forEach(b => b.classList.remove('active'));
-      }
-    });
+    // Hiq active nga butonat e tjerë të asaj ndeshjeje
+    matchCard.querySelectorAll('.bet-btn').forEach(b => b.classList.remove('active'));
 
-  
+    // Vendos active tek butoni i klikuar
     btn.classList.add('active');
-    selectedOdds[match] = parseFloat(btn.dataset.odd);
+
+    // Ruaj koeficientin
+    selectedOdds[matchTitle] = parseFloat(btn.dataset.odd);
 
     updateTotal();
   });
 });
 
+// Llogarit koeficientin total
 function updateTotal() {
-  let total = 1;
   const odds = Object.values(selectedOdds);
+
   if (odds.length === 0) {
     totalOddDisplay.textContent = "0.00";
     possibleWinDisplay.textContent = "0.00";
     return;
   }
 
-  odds.forEach(o => total *= o);
+  let total = 1;
+  odds.forEach(odd => total *= odd);
+
   totalOddDisplay.textContent = total.toFixed(2);
 
   calculateWin();
 }
 
-
+// Llogarit fitimin e mundshëm
 stakeInput.addEventListener('input', calculateWin);
 
 function calculateWin() {
   const stake = parseFloat(stakeInput.value);
   const totalOdd = parseFloat(totalOddDisplay.textContent);
+
   if (!stake || totalOdd === 0) {
     possibleWinDisplay.textContent = "0.00";
     return;
@@ -56,7 +59,7 @@ function calculateWin() {
   possibleWinDisplay.textContent = win.toFixed(2);
 }
 
-
+// Kur vendos bastin
 document.getElementById('placeBet').addEventListener('click', () => {
   const stake = parseFloat(stakeInput.value);
   const totalOdd = parseFloat(totalOddDisplay.textContent);

@@ -1,4 +1,4 @@
-/* Reset i përgjithshëm */
+
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +6,6 @@
   font-family: Arial, sans-serif;
 }
 
-/* Header */
 header {
   width: 100%;
   background: #111;
@@ -32,7 +31,7 @@ nav a:hover {
   color: #00c3ff;
 }
 
-/* Background */
+
 body {
   background: linear-gradient(135deg, #0b132b, #1c2541);
   height: 100vh;
@@ -41,10 +40,10 @@ body {
   align-items: center;
 }
 
-/* Login Box */
+
 .login-container {
   background: #ffffffee;
-  padding: 35px;
+  padding: 20px;
   width: 350px;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
@@ -56,7 +55,7 @@ body {
   color: #003a70;
 }
 
-/* Fushat e inputit */
+
 .input-group {
   text-align: left;
   margin-bottom: 15px;
@@ -82,7 +81,7 @@ body {
   box-shadow: 0 0 8px rgba(0,150,255,0.6);
 }
 
-/* Butoni */
+
 button {
   width: 100%;
   padding: 12px;
