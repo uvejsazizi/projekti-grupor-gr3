@@ -34,3 +34,18 @@ body {
    text-align: center;
    color: yellow;
 }
+
+.warning-box {
+    background: rgba(0, 0, 0, 0.4);          
+    color: rgb(255, 255, 255);              
+    padding: 15px 20px;
+    border-left: 6px solid rgb(170, 168, 32);
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-family: Arial, sans-serif;
+    max-width: 450px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+}
+
