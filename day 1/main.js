@@ -1,4 +1,4 @@
-let selectedOdds = {}; // Ruaj koeficientet e zgjedhura për çdo ndeshje
+let selectedOdds = {};
 
 const buttons = document.querySelectorAll('.bet-btn');
 const totalOddDisplay = document.getElementById('totalOdd');
@@ -6,26 +6,21 @@ const stakeInput = document.getElementById('stake');
 const possibleWinDisplay = document.getElementById('possibleWin');
 const message = document.getElementById('message');
 
-// Kur klikon një buton basti
 buttons.forEach(btn => {
   btn.addEventListener('click', () => {
     const matchCard = btn.closest('.match-card');
     const matchTitle = matchCard.querySelector('h2').textContent.trim();
 
-    // Hiq active nga butonat e tjerë të asaj ndeshjeje
     matchCard.querySelectorAll('.bet-btn').forEach(b => b.classList.remove('active'));
 
-    // Vendos active tek butoni i klikuar
     btn.classList.add('active');
 
-    // Ruaj koeficientin
     selectedOdds[matchTitle] = parseFloat(btn.dataset.odd);
 
     updateTotal();
   });
 });
 
-// Llogarit koeficientin total
 function updateTotal() {
   const odds = Object.values(selectedOdds);
 
@@ -43,7 +38,6 @@ function updateTotal() {
   calculateWin();
 }
 
-// Llogarit fitimin e mundshëm
 stakeInput.addEventListener('input', calculateWin);
 
 function calculateWin() {
@@ -59,7 +53,6 @@ function calculateWin() {
   possibleWinDisplay.textContent = win.toFixed(2);
 }
 
-// Kur vendos bastin
 document.getElementById('placeBet').addEventListener('click', () => {
   const stake = parseFloat(stakeInput.value);
   const totalOdd = parseFloat(totalOddDisplay.textContent);
