@@ -1,5 +1,9 @@
 
-* {
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("backgroundlogin.png");
+  background-size: cover;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -32,18 +36,9 @@ nav a:hover {
 }
 
 
-body {
-  background: linear-gradient(135deg, #0b132b, #1c2541);
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
 .login-container {
   background: #ffffffee;
-  padding: 20px;
+  padding: 40px;
   width: 350px;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
