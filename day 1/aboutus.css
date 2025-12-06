@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color:rgb(30, 30, 51);
+  background-color:rgb(0, 0, 0);
   color: #f1f1f1;
   line-height: 1.6;
 }
@@ -48,4 +48,16 @@ body {
     text-align: center;
 
 }
+nav a {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #00c3ff;
+}
+
 

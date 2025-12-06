@@ -16,7 +16,7 @@ header {
   color: #fff;
   padding: 15px 0;
   text-align: center;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  box-shadow: 0 2px 10px rgba(253, 253, 253, 0.4);
 }
 
 header h1 {
@@ -24,7 +24,7 @@ header h1 {
 }
 
 nav a {
-  color: #fff;
+  color: #ffffff;
   margin: 0 15px;
   text-decoration: none;
   font-weight: bold;
@@ -32,12 +32,12 @@ nav a {
 }
 
 nav a:hover {
-  color: #00c3ff;
+  color: #b1be34;
 }
 
 
 .login-container {
-  background: #ffffffee;
+  background: #000000ee;
   padding: 40px;
   width: 350px;
   border-radius: 12px;
@@ -47,7 +47,7 @@ nav a:hover {
 
 .login-container h2 {
   margin-bottom: 20px;
-  color: #003a70;
+  color: #b8ae2f;
 }
 
 
@@ -58,29 +58,29 @@ nav a:hover {
 
 .input-group label {
   font-weight: bold;
-  color: #003a70;
+  color: #c4c131;
 }
 
 .input-group input {
   width: 100%;
   padding: 10px;
   margin-top: 5px;
-  border: 2px solid #0066cc;
+  border: 2px solid #000000;
   border-radius: 8px;
   font-size: 14px;
   transition: 0.3s;
 }
 
 .input-group input:focus {
-  border-color: #00a2ff;
-  box-shadow: 0 0 8px rgba(0,150,255,0.6);
+  border-color: #c3ce26;
+  box-shadow: 0 0 8px rgb(192, 189, 32);
 }
 
 
 button {
   width: 100%;
   padding: 12px;
-  background: #0066cc;
+  background: #c2c524;
   color: white;
   border: none;
   border-radius: 8px;
