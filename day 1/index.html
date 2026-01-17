@@ -1,41 +1,84 @@
 <!DOCTYPE html>
 <html lang="sq">
-<head>
-  <meta charset="UTF-8" >
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-  <title>Bastore Login</title>
-  <link rel="stylesheet" href="login.css" >
-  <header>
-  <h1>Bastore Sportive</h1>
-  <nav>
-    <a href="index.html">Hyr</a>
-    <a href="kryefaqja.html">Kryefaqja</a>
-    <a href="aboutus.html">Rreth Nesh</a>
-  </nav>
-</header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bastore Sportive — Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">Bastore Sportive</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="kryefaqja.html">Kryefaqja</a></li>
+              <li class="nav-item"><a class="nav-link" href="aboutus.html">Rreth Nesh</a></li>
+              <li class="nav-item"><a class="nav-link" href="login.html">Hyr</a></li>
+              <li class="nav-item"><a class="nav-link" href="https://getbootstrap.com/" target="_blank" rel="noopener">Bootstrap</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-</head>
-<body>
+    <main class="container py-5">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4">
+          <h1 class="display-5">Mirësevini në Bastore TT666</h1>
+          <p class="lead">Vendos bastet, ndjek ndeshjet dhe shijo ofertat tona. Platformë moderne dhe e sigurt për lojtarët.</p>
+          <p>
+            <a href="kryefaqja.html" class="btn btn-warning me-2">Shiko Ndeshjet</a>
+            <a href="aboutus.html" class="btn btn-outline-light">Më shumë rreth nesh</a>
+          </p>
+        </div>
 
-
-  <div class="login-container">
-    <h2>Bastore TT666</h2>
-    <form id="loginForm">
-      <div class="input-group">
-        <label for="username">Perdoruesi</label>
-        <input type="text" id="username" placeholder="Useri" required >
+        <div class="col-lg-6 text-center">
+          <img src="backgroundlogin.png" alt="Promo" class="img-fluid rounded shadow-sm">
+          <p class="small text-muted mt-2">Foto promo — pa video</p>
+        </div>
       </div>
 
-      <div class="input-group">
-        <label for="password">Passwordi</label>
-        <input type="password" id="password" placeholder="Passwordi" required >
+      <hr class="my-4">
+
+      <section>
+        <h2>Skeda e Shpejtë</h2>
+        <p>Shembull i tabelës së rezultateve dhe media.</p>
+
+        <div class="table-responsive">
+          <table class="table table-dark table-striped">
+            <thead>
+              <tr>
+                <th>Ndeshja</th>
+                <th>Koeficienti 1</th>
+                <th>Nërprerje</th>
+                <th>Koeficienti 2</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Real Madrid vs Barcelona</td><td>2.10</td><td>X</td><td>2.80</td></tr>
+              <tr><td>Dortmund vs Bayern</td><td>2.50</td><td>X</td><td>2.60</td></tr>
+              <tr><td>Liverpool vs Man United</td><td>1.60</td><td>X</td><td>4.10</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-dark text-light py-3">
+      <div class="container d-flex justify-content-between">
+        <small>© 2025 Bastore Sportive - Të gjitha të drejtat e rezervuara.</small>
+        <small><a href="https://example.com/privacy" class="text-decoration-none text-light">Privacy</a></small>
       </div>
+    </footer>
 
-      <button type="submit">Vazhdo</button>
-      <p id="message"></p>
-    </form>
-  </div>
-
-  <script src="script.js"></script>
-</body>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+  </body>
 </html>

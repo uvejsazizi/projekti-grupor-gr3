@@ -1,163 +1,52 @@
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Reset + base */
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Poppins',Arial,sans-serif;background:#071028;color:#e6eef8;min-height:100vh}
+
+/* Navbar */
+.navbar-brand{font-weight:700}
+
+/* Containers and cards */
+.container{max-width:1100px}
+.card{border-radius:12px}
+
+/* Match cards */
+.match-card h4{color:#ffcc00}
+.bet-btn{min-width:110px}
+.bet-btn.pulse{box-shadow:0 0 12px rgba(255,204,0,0.35)}
+
+/* Bet slip */
+.bet-slip{background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));border-radius:10px}
+
+/* Tables */
+table.table thead th{background:rgba(0,0,0,0.4)}
+
+/* About container */
+.about-container{background:rgba(255,255,255,0.03);border-radius:12px;padding:1.5rem}
+
+/* Warning box */
+.warning-box{background:rgba(255,0,0,0.06);color:#ffd6d6;padding:12px;border-left:6px solid #d9534f;border-radius:6px}
+
+/* Login card tweaks */
+.login-container{max-width:420px;margin:0 auto}
+
+/* Footer */
+footer{font-size:0.9rem}
+
+/* Responsive layout tweaks */
+@media (max-width:768px){
+  .bet-btn{min-width:70px;padding:6px}
+  .about-container{padding:1rem}
 }
 
-
-body {
-  font-family: "Poppins", sans-serif;
-  background: linear-gradient(135deg, #161616, #000000);
-  color: #f0f0f0;
-  text-align: center;
-  min-height: 100vh;
+@media (max-width:480px){
+  .container{padding:0 12px}
 }
 
+/* Accessibility + focus */
+a:focus,button:focus,input:focus{outline:3px solid rgba(0,123,255,0.15);outline-offset:2px}
 
-header {
-  background: #000000;
-  padding: 20px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-}
-
-header h1 {
-  color: #ffcc00;
-}
-
-
-main {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.match-card {
-  background: #000000;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 500px;
-  margin: 15px 0;
-  padding: 20px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
-  transition: transform 0.2s;
-}
-
-.match-card:hover {
-  transform: scale(1.02);
-}
-
-.match-card h2 {
-  color: #ffcc00;
-  margin-bottom: 10px;
-}
-
-.odds {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 10px;
-}
-
-.bet-btn {
-  background: #b1982a;
-  color: #000000;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.bet-btn:hover {
-  background: #a3af3a;
-}
-
-.bet-btn.active {
-  background: #ffcc00;
-  color: #000000;
-}
-
-
-.bet-slip {
-  background: #000000;
-  border-radius: 10px;
-  padding: 25px;
-  margin-top: 30px;
-  width: 90%;
-  max-width: 500px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-}
-
-.bet-slip h2 {
-  color: #ffcc00;
-  margin-bottom: 10px;
-}
-
-input {
-  padding: 10px;
-  width: 80%;
-  border: none;
-  border-radius: 6px;
-  margin-top: 10px;
-  font-size: 1em;
-}
-
-#placeBet {
-  background: #ffcc00;
-  color: #000000;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 15px;
-  transition: background 0.3s;
-}
-
-#placeBet:hover {
-  background: #ffd633;
-}
-
-#message {
-  margin-top: 15px;
-  font-weight: bold;
-}
-
-
-footer {
-  background: #000000;
-  padding: 10px;
-  margin-top: 30px;
-  font-size: 0.9em;
-  color: #ccc;
-}
-
- .balance {
-    background: linear-gradient(135deg, #1f1f1f, #333);
-    color: #9daf3a;
-    padding: 12px 20px;
-    font-size: 1.2rem;
-    font-family: 'Poppins', sans-serif;
-    border-radius: 10px;
-    width: fit-content;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-    letter-spacing: 1px;
-    font-weight: 600;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    text-transform: uppercase;
-}
-
-nav a {
-  color: #fff;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: #00c3ff;
-}
+/* Utility */
+.text-success{color:#9fd9a6}
+.text-warning{color:#ffd633}
 

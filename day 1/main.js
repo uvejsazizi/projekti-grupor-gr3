@@ -1,69 +1,94 @@
-let selectedOdds = {};
+/*
+  main.js
+  - Keeps existing betting logic but adds jQuery usage, arrays, loops, conditionals
+  - Demonstrates manipulating input values and styling elements via JS
+*/
 
-const buttons = document.querySelectorAll('.bet-btn');
-const totalOddDisplay = document.getElementById('totalOdd');
-const stakeInput = document.getElementById('stake');
-const possibleWinDisplay = document.getElementById('possibleWin');
-const message = document.getElementById('message');
+$(function(){
+  // Selected odds stored by match title
+  const selectedOdds = {};
 
-buttons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const matchCard = btn.closest('.match-card');
-    const matchTitle = matchCard.querySelector('h2').textContent.trim();
+  // Use event delegation for buttons
+  $(document).on('click', '.bet-btn', function(){
+    const $btn = $(this);
+    const $card = $btn.closest('.match-card, .card');
+    const matchTitle = $card.find('h4, h2').first().text().trim();
 
-    matchCard.querySelectorAll('.bet-btn').forEach(b => b.classList.remove('active'));
+    // Remove active class in this card and set on clicked
+    $card.find('.bet-btn').removeClass('active btn-warning').addClass('btn-outline-warning');
+    $btn.removeClass('btn-outline-warning').addClass('active btn-warning');
 
-    btn.classList.add('active');
-
-    selectedOdds[matchTitle] = parseFloat(btn.dataset.odd);
-
+    selectedOdds[matchTitle] = parseFloat($btn.data('odd'));
     updateTotal();
   });
-});
 
-function updateTotal() {
-  const odds = Object.values(selectedOdds);
+  // Update total coefficient and possible win
+  function updateTotal(){
+    const odds = Object.values(selectedOdds);
+    const $totalOdd = $('#totalOdd');
+    const $possible = $('#possibleWin');
 
-  if (odds.length === 0) {
-    totalOddDisplay.textContent = "0.00";
-    possibleWinDisplay.textContent = "0.00";
-    return;
+    if(odds.length === 0){
+      $totalOdd.text('0.00');
+      $possible.text('0.00');
+      return;
+    }
+
+    // multiply using reduce (array function)
+    const total = odds.reduce((acc, val) => acc * val, 1);
+    $totalOdd.text(total.toFixed(2));
+    calculateWin();
   }
 
-  let total = 1;
-  odds.forEach(odd => total *= odd);
+  // When stake changes
+  $('#stake').on('input', calculateWin);
 
-  totalOddDisplay.textContent = total.toFixed(2);
-
-  calculateWin();
-}
-
-stakeInput.addEventListener('input', calculateWin);
-
-function calculateWin() {
-  const stake = parseFloat(stakeInput.value);
-  const totalOdd = parseFloat(totalOddDisplay.textContent);
-
-  if (!stake || totalOdd === 0) {
-    possibleWinDisplay.textContent = "0.00";
-    return;
+  function calculateWin(){
+    const stake = parseFloat($('#stake').val()) || 0;
+    const totalOdd = parseFloat($('#totalOdd').text()) || 0;
+    if(!stake || totalOdd === 0){
+      $('#possibleWin').text('0.00');
+      return;
+    }
+    $('#possibleWin').text((stake * totalOdd).toFixed(2));
   }
 
-  const win = stake * totalOdd;
-  possibleWinDisplay.textContent = win.toFixed(2);
-}
+  // Place bet
+  $('#placeBet').on('click', function(){
+    const stake = parseFloat($('#stake').val()) || 0;
+    const totalOdd = parseFloat($('#totalOdd').text()) || 0;
+    const $msg = $('#message');
 
-document.getElementById('placeBet').addEventListener('click', () => {
-  const stake = parseFloat(stakeInput.value);
-  const totalOdd = parseFloat(totalOddDisplay.textContent);
+    if(!stake || totalOdd === 0){
+      $msg.text('⚠️ Zgjidh të paktën një ndeshje dhe shkruaj shumën!').css('color','red');
+      return;
+    }
 
-  if (!stake || totalOdd === 0) {
-    message.textContent = "⚠️ Zgjidh të paktën një ndeshje dhe shkruaj shumën!";
-    message.style.color = "red";
-    return;
-  }
+    const win = (stake * totalOdd).toFixed(2);
+    $msg.text(`✅ Bast i vendosur! Fitimi i mundshëm: ${win} €`).css('color','#00ff88');
 
-  const win = (stake * totalOdd).toFixed(2);
-  message.textContent = `✅ Bast i vendosur! Fitimi i mundshëm: ${win} €`;
-  message.style.color = "#00ff88";
+    // Example array/loop: store bet summary and show in console
+    const betSummary = Object.keys(selectedOdds).map((match)=>({match, odd:selectedOdds[match]}));
+    console.log('Bet summary:', betSummary);
+
+    // Simple conditional example
+    if(betSummary.length > 5){
+      alert('Keni zgjedhur shumë ndeshje — konsideroni reduktimin e tyre.');
+    }
+  });
+
+  // Small UI enhancement: animate active buttons
+  setInterval(()=>{
+    $('.bet-btn.active').each(function(i,el){
+      const $el = $(el);
+      $el.toggleClass('pulse');
+    });
+  }, 1000);
+
+  // Example of reading/manipulating inputs on page load
+  const exampleInputs = ['stake','someOther'];
+  exampleInputs.forEach(id => {
+    const $el = $('#'+id);
+    if($el.length && !$el.val()) $el.val('');
+  });
 });

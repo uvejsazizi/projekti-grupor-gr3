@@ -20,4 +20,29 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 });
 
+// Populate team table using array, loops and DOM manipulation
+document.addEventListener('DOMContentLoaded', () => {
+  const team = [
+    {name: 'Arben Krasniqi', role: 'Menaxher', place: 'Prishtinë'},
+    {name: 'Elira Domi', role: 'Marketing', place: 'Tiranë'},
+    {name: 'Besart Hoxha', role: 'Zhvillues', place: 'Prizren'}
+  ];
+
+  const $tbody = document.querySelector('#teamTable tbody');
+  if($tbody){
+    team.forEach(member => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td>${member.name}</td><td>${member.role}</td><td>${member.place}</td>`;
+      $tbody.appendChild(tr);
+    });
+  }
+
+  // Styling via JS: highlight header when mouse over
+  const nav = document.querySelector('.navbar');
+  if(nav){
+    nav.addEventListener('mouseenter', ()=> nav.classList.add('shadow-lg'));
+    nav.addEventListener('mouseleave', ()=> nav.classList.remove('shadow-lg'));
+  }
+});
+
 
